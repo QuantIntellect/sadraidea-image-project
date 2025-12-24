@@ -63,7 +63,7 @@
             right: 0;
             left: 0;
             z-index: 1000;
-            padding: 1.5rem 4rem;
+            padding: 0.75rem 4rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -74,24 +74,37 @@
         }
 
         .nav.scrolled {
-            padding: 1rem 4rem;
+            padding: 0.5rem 4rem;
             box-shadow: var(--shadow-soft);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
         }
 
         .nav-logo {
             text-decoration: none;
             display: flex;
             align-items: center;
+            gap: 0.75rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .nav-logo:hover {
+            color: var(--gold-primary);
         }
 
         .nav-logo-img {
-            height: 40px;
+            height: 50px;
             width: auto;
         }
 
         .nav-links {
             display: flex;
-            gap: 3rem;
+            gap: 2rem;
             list-style: none;
         }
 
@@ -105,6 +118,11 @@
 
         .nav-links a:hover {
             color: var(--gold-primary);
+        }
+
+        .nav-links a.active {
+            color: var(--gold-primary);
+            font-weight: 600;
         }
 
         /* Hero Section */
@@ -151,16 +169,10 @@
             padding-left: 2rem;
         }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: rgba(201, 160, 80, 0.1);
-            border: 1px solid rgba(201, 160, 80, 0.3);
-            border-radius: 50px;
-            font-size: 0.8rem;
-            color: var(--gold-dark);
+        .hero-proposal {
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            font-weight: 700;
+            color: var(--gold-primary);
             margin-bottom: 1.5rem;
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards;
@@ -270,6 +282,161 @@
             }
         }
 
+        /* About Section */
+        .about-section {
+            background: var(--bg-light);
+            padding: 6rem 4rem;
+        }
+
+        .about-content {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .about-intro {
+            text-align: center;
+            max-width: 1100px;
+            margin: 0 auto 3rem;
+        }
+
+        .about-intro p {
+            color: var(--text-secondary);
+            line-height: 1.9;
+            font-size: 1rem;
+        }
+
+        .team-section h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--gold-primary);
+        }
+
+        .team-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            font-size: 0.95rem;
+            color: var(--gold-primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Intro Section */
+        .intro-section {
+            background: white;
+            padding: 6rem 4rem;
+        }
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .intro-problem, .intro-solution, .intro-ai {
+            background: var(--bg-light);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--border-light);
+        }
+
+        .intro-problem {
+            border-right: 4px solid #e74c3c;
+        }
+
+        .intro-solution {
+            border-right: 4px solid var(--accent-green);
+        }
+
+        .intro-ai {
+            border-right: 4px solid var(--gold-primary);
+        }
+
+        .intro-problem h3, .intro-solution h3, .intro-ai h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .intro-problem p, .intro-solution p, .intro-ai p {
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        .intro-problem p:last-child, .intro-solution p:last-child, .intro-ai p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-text {
+            background: rgba(231, 76, 60, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            color: #c0392b !important;
+            font-weight: 600;
+        }
+
+        .intro-solution strong {
+            color: var(--accent-green);
+        }
+
+        .ai-suggestion {
+            background: rgba(201, 160, 80, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            color: var(--gold-dark) !important;
+            font-weight: 500;
+            border-right: 3px solid var(--gold-primary);
+        }
+
+        @media (max-width: 992px) {
+            .intro-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Section Common Styles */
         section {
             padding: 6rem 4rem;
@@ -282,11 +449,10 @@
         }
 
         .section-label {
-            font-size: 0.8rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--gold-primary);
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
+            letter-spacing: 0.1em;
             margin-bottom: 0.75rem;
             display: block;
         }
@@ -303,6 +469,11 @@
             color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto;
+        }
+
+        .expandable-note {
+            color: var(--gold-dark);
+            font-weight: 500;
         }
 
         /* Solution Section */
@@ -786,16 +957,33 @@
             margin-right: 0.5rem;
         }
 
-        .pricing-timeline {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
+        .pricing-info-row {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 1.5rem;
             padding-bottom: 1.5rem;
             border-bottom: 1px solid var(--border-light);
         }
 
+        .pricing-timeline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
         .pricing-timeline strong {
             color: var(--accent-green);
+        }
+
+        .pricing-support {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .pricing-support strong {
+            color: var(--gold-primary);
         }
 
         .payment-schedule h4,
@@ -900,10 +1088,140 @@
             font-weight: bold;
         }
 
-        @media (max-width: 992px) {
-            .pricing-grid {
+        .pricing-single {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pricing-single .pricing-card {
+            text-align: right;
+        }
+
+        .pricing-single .pricing-amount {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-single .pricing-timeline {
+            text-align: center;
+        }
+
+        .free-bonus {
+            background: linear-gradient(135deg, rgba(42, 157, 143, 0.08) 0%, rgba(42, 157, 143, 0.15) 100%);
+            border: 2px dashed var(--accent-green);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .free-bonus h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--accent-green);
+        }
+
+        .free-bonus ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .free-bonus li {
+            padding: 0.5rem 0;
+            padding-right: 1.5rem;
+            position: relative;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .free-bonus li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .weekly-meetings {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(201, 160, 80, 0.1);
+            border-radius: 12px;
+            text-align: right;
+        }
+
+        .weekly-meetings ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .weekly-meetings li {
+            font-size: 0.95rem;
+            color: var(--gold-dark);
+            padding: 0.5rem 0;
+            padding-right: 1.5rem;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .weekly-meetings li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        /* Technical Section */
+        .technical-section {
+            background: var(--bg-light);
+        }
+
+        .technical-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .technical-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .technical-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--gold-primary);
+        }
+
+        .technical-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .technical-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .technical-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .technical-grid {
                 grid-template-columns: 1fr;
-                max-width: 500px;
             }
         }
 
@@ -911,7 +1229,7 @@
         .footer {
             background: var(--text-dark);
             color: white;
-            padding: 3rem 4rem;
+            padding: 1.5rem 4rem;
         }
 
         .footer-content {
@@ -922,36 +1240,52 @@
             margin: 0 auto;
         }
 
-        .footer-logo {
+        .footer-contact {
             display: flex;
             align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.6);
+            font-size: 1.1rem;
         }
 
-        .footer-logo-img {
-            height: 35px;
-            width: auto;
-            filter: brightness(0) invert(1);
+        .footer-contact a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: var(--gold-primary);
         }
 
         .footer-text {
             color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
+            font-size: 1.1rem;
         }
 
         .footer-links {
             display: flex;
-            gap: 2rem;
         }
 
-        .footer-links a {
+        .footer-logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             color: rgba(255,255,255,0.6);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             transition: color 0.3s ease;
         }
 
-        .footer-links a:hover {
+        .footer-logo-link:hover {
             color: var(--gold-primary);
+        }
+
+        .footer-logo-img {
+            height: 40px;
+            width: auto;
+            filter: brightness(0) invert(1);
         }
 
         /* Responsive */
@@ -1034,14 +1368,20 @@
 <body>
     <!-- Navigation -->
     <nav class="nav">
-        <a href="https://zharfai.com" target="_blank" class="nav-logo">
-            <img src="ZharfAI Logo.png" alt="Zharf AI" class="nav-logo-img">
-        </a>
+        <div class="nav-brand">
+            <a href="https://zharfai.com" target="_blank" class="nav-logo">
+                <img src="ZharfAI Logo.png" alt="Zharf AI" class="nav-logo-img">
+                <span>شرکت هوش مصنوعی ژرف</span>
+            </a>
+        </div>
         <ul class="nav-links">
-            <li><a href="#solution">راه‌حل</a></li>
-            <li><a href="#demo">دمو</a></li>
+            <li><a href="#about">درباره ما</a></li>
+            <li><a href="#intro">معرفی پروژه</a></li>
+            <li><a href="#solution">مراحل</a></li>
+            <li><a href="#demo">نمونه</a></li>
             <li><a href="#benefits">مزایا</a></li>
             <li><a href="#categories">محصولات</a></li>
+            <li><a href="#technical">قابلیت‌ها</a></li>
             <li><a href="#pricing">قیمت</a></li>
         </ul>
     </nav>
@@ -1052,15 +1392,15 @@
         <div class="hero-grid"></div>
         <div class="hero-content">
             <div class="hero-text">
-                <div class="hero-badge">
-                    پروپوزال اختصاصی از ژرف‌ای‌آی برای طراحان ایده صدرا
+                <div class="hero-proposal">
+                    پروپوزال اختصاصی از شرکت هوش مصنوعی ژرف برای طراحان ایده صدرا
                 </div>
                 <h1 class="hero-title">
                     سیستم <span class="highlight">هوش مصنوعی</span><br>
                     شبیه‌سازی محصولات
                 </h1>
                 <p class="hero-subtitle">
-                    مشتریان پیش از خرید، محصولات را در فضای خود می‌بینند.
+                    به مشتریان خود امکان دهید محصولات را قبل از خرید در فضای واقعی‌شان تجربه کنند.
                 </p>
                 <div class="hero-cta">
                     <a href="#solution" class="btn btn-primary">مشاهده راه‌حل</a>
@@ -1070,6 +1410,59 @@
                 <div class="hero-logo-box">
                     <img src="sadra-logo.jpg" alt="طراحان ایده صدرا" class="hero-logo">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section" id="about">
+        <div class="section-header">
+            <span class="section-label">درباره ما</span>
+            <h2 class="section-title">شرکت هوش مصنوعی ژرف</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-intro">
+                <p>ژرف در سال ۱۴۰۱ توسط مهندسانی از دانشگاه تهران، دانشگاه صنعتی شریف، مدرسه اقتصاد لندن و دانشگاه وارویک تأسیس شد. تیم ما سیستم‌های یادگیری ماشین را در PwC، J.P. Morgan و آزمایشگاه‌های تحقیقاتی در اروپا و خاورمیانه توسعه داده است. تخصص ما در یادگیری ماشین، بینایی ماشین و مهندسی داده است.</p>
+            </div>
+            <div class="team-section">
+                <h3>مسئولین پروژه شما</h3>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-name">سینا میرزایی نخستین</div>
+                        <div class="team-role">بنیان‌گذار و مدیر فناوری</div>
+                        <p>بنیان‌گذار ژرف و رهبری تمامی توسعه‌های فنی. متخصص در یادگیری عمیق، بینایی ماشین و ساخت راه‌حل‌های مبتنی بر هوش مصنوعی از ایده تا محصول.</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-name">وحید احمدی</div>
+                        <div class="team-role">هم‌بنیان‌گذار و مدیر پروژه</div>
+                        <p>مدیریت اجرای پروژه‌ها و هماهنگی تیم. با تجربه مهندسی یادگیری ماشین از PwC و RiskLab برای تضمین تحویل موفق پروژه‌های هوش مصنوعی.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Introduction Section -->
+    <section class="intro-section" id="intro">
+        <div class="section-header">
+            <span class="section-label">معرفی پروژه</span>
+            <h2 class="section-title">چالش مشتریان و راه‌حل ما</h2>
+        </div>
+        <div class="intro-content">
+            <div class="intro-problem">
+                <h3>چالش</h3>
+                <p>شرکت طراحان ایده صدرا ارائه‌دهنده انواع تجهیزات دکوراسیون داخلی از جمله شیرآلات آشپزخانه، وال‌هنگ، پارکت و دیگر محصولات ساختمانی است. بسیاری از مشتریان هنگام خرید این محصولات با چالش مهمی روبه‌رو هستند:</p>
+                <p class="highlight-text">عدم تصور دقیق از نحوه قرارگیری محصول در فضای واقعی منزل یا محل کار</p>
+            </div>
+            <div class="intro-solution">
+                <h3>راه‌حل</h3>
+                <p>به‌منظور حل این مشکل و افزایش کیفیت تجربه مشتری، پیشنهاد می‌شود یک ماژول هوش مصنوعی روی ساب‌دامین اختصاصی (مانند ai.sadraidea.com) یا وب‌سایت اصلی شما پیاده‌سازی گردد.</p>
+                <p>همچنین یک <strong>پنل مدیریت اختصاصی</strong> برای مدیریت محصولات در اختیار شما قرار می‌گیرد.</p>
+                <p>این کار باعث <strong>افزایش نرخ تبدیل فروش</strong>، <strong>کاهش تردید مشتری</strong>، و ایجاد <strong>تجربه‌ای مدرن و حرفه‌ای</strong> برای برند خواهد شد.</p>
+            </div>
+            <div class="intro-ai">
+                <h3>سازگاری با هوش مصنوعی</h3>
+                <p>همچنین پیشنهاد می‌کنیم برای قابل جستجو بودن در موتورهای هوش مصنوعی مانند ChatGPT، محتوا و طراحی وب‌سایت شما با استانداردهای جدید AI سازگار شود.</p>
             </div>
         </div>
     </section>
@@ -1088,22 +1481,22 @@
             <div class="step" data-delay="0">
                 <div class="step-number">۱</div>
                 <h3>انتخاب محصول</h3>
-                <p>شیرآلات یا کفپوش مورد نظر را انتخاب کنید</p>
+                <p>محصول مورد نظر (مثلاً شیرآلات یا پارکت) را از میان محصولات شرکت انتخاب کنند</p>
             </div>
             <div class="step" data-delay="150">
                 <div class="step-number">۲</div>
                 <h3>آپلود تصویر</h3>
-                <p>عکس آشپزخانه یا اتاق خود را آپلود کنید</p>
+                <p>عکس محیط واقعی خود (مثلاً آشپزخانه یا اتاق) را آپلود کنند</p>
             </div>
             <div class="step" data-delay="300">
                 <div class="step-number">۳</div>
-                <h3>پردازش AI</h3>
-                <p>هوش مصنوعی محصول را جایگذاری می‌کند</p>
+                <h3>جایگذاری با هوش مصنوعی</h3>
+                <p>هوش مصنوعی به صورت خودکار محصول را روی عکس جایگذاری و با نور، زاویه و بافت محیط هماهنگ‌سازی می‌کند</p>
             </div>
             <div class="step" data-delay="450">
                 <div class="step-number">۴</div>
                 <h3>مشاهده نتیجه</h3>
-                <p>نتیجه نهایی را ببینید و ذخیره کنید</p>
+                <p>کاربران قبل از خرید، نتیجه نهایی را مشاهده و ذخیره کنند</p>
             </div>
         </div>
     </section>
@@ -1181,9 +1574,9 @@
                     </svg>
                 </div>
                 <h3>افزایش فروش</h3>
-                <p>مشتری با دیدن محصول در فضای واقعی، سریع‌تر و مطمئن‌تر تصمیم می‌گیرد.</p>
+                <p>کاربر با مشاهده محصول در محیط واقعی خود، تصمیم‌گیری سریع‌تر و مطمئن‌تری دارد و نرخ تبدیل به‌طور چشمگیری افزایش می‌یابد.</p>
                 <div class="benefit-stat">
-                    <span>+۴۰٪</span>
+                    <span>۴۰٪</span>
                     <small>افزایش نرخ تبدیل</small>
                 </div>
             </div>
@@ -1193,8 +1586,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
                     </svg>
                 </div>
-                <h3>تمایز رقابتی</h3>
-                <p>اولین شرکت در صنعت دکوراسیون ایران با این قابلیت پیشرفته.</p>
+                <h3>بهبود تجربه کاربری و ایجاد تمایز</h3>
+                <p>این ویژگی در بازار ایران هنوز محدود است و باعث برتری رقابتی برای شرکت می‌شود و تجربه‌ای مدرن و حرفه‌ای ارائه می‌دهد.</p>
                 <div class="benefit-stat">
                     <span>اول</span>
                     <small>در بازار ایران</small>
@@ -1206,11 +1599,11 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                     </svg>
                 </div>
-                <h3>افزایش اعتماد</h3>
-                <p>دیدن محصول در فضای واقعی، اعتماد به برند و محصول را افزایش می‌دهد.</p>
+                <h3>افزایش اعتماد و تعامل مشتری</h3>
+                <p>دیدن محصول در فضای واقعی، اعتماد به برند را افزایش می‌دهد و تردید مشتری را کاهش می‌دهد.</p>
                 <div class="benefit-stat">
-                    <span>-۳۰٪</span>
-                    <small>کاهش مرجوعی</small>
+                    <span>۳۰٪</span>
+                    <small>کاهش تردید مشتری</small>
                 </div>
             </div>
         </div>
@@ -1222,7 +1615,7 @@
             <span class="section-label">محصولات قابل شبیه‌سازی</span>
             <h2 class="section-title">دو دسته‌بندی اصلی</h2>
             <p class="section-desc">
-                در فاز اول، این دو دسته محصول پشتیبانی می‌شوند.
+                در فاز اول، این دو دسته محصول پشتیبانی می‌شوند. <span class="expandable-note">سیستم به‌گونه‌ای طراحی می‌شود که در آینده به‌راحتی قابل گسترش برای سایر محصولات باشد.</span>
             </p>
         </div>
         <div class="categories-grid">
@@ -1245,78 +1638,111 @@
         </div>
     </section>
 
+    <!-- Technical Section -->
+    <section class="technical-section" id="technical">
+        <div class="section-header">
+            <span class="section-label">شرح فنی مختصر</span>
+            <h2 class="section-title">قابلیت‌های سیستم</h2>
+        </div>
+        <div class="technical-grid">
+            <div class="technical-card">
+                <div class="technical-icon">⚙️</div>
+                <h3>پنل مدیریت</h3>
+                <p>مدیریت محصولات از طریق پنل مدیریت اختصاصی</p>
+            </div>
+            <div class="technical-card">
+                <div class="technical-icon">🌐</div>
+                <h3>یکپارچه‌سازی انعطاف‌پذیر</h3>
+                <p>پیاده‌سازی روی ساب‌دامین اختصاصی (مانند ai.sadraidea.com) یا وب‌سایت اصلی شما</p>
+            </div>
+            <div class="technical-card">
+                <div class="technical-icon">🤖</div>
+                <h3>مدل‌های پیشرفته هوش مصنوعی</h3>
+                <p>استفاده از مدل‌های هوش مصنوعی image-to-image و object replacement</p>
+            </div>
+            <div class="technical-card">
+                <div class="technical-icon">🏠</div>
+                <h3>تشخیص محیط</h3>
+                <p>تشخیص خودکار محیط (آشپزخانه، سرویس بهداشتی، اتاق و ...)</p>
+            </div>
+            <div class="technical-card">
+                <div class="technical-icon">💡</div>
+                <h3>جایگذاری طبیعی</h3>
+                <p>جایگذاری محصول با حفظ نور و پرسپکتیو محیط</p>
+            </div>
+            <div class="technical-card">
+                <div class="technical-icon">🔄</div>
+                <h3>مقایسه چند گزینه</h3>
+                <p>امکان انتخاب چند گزینه و نمایش نتیجه برای مقایسه</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing Section -->
     <section class="pricing-section" id="pricing">
         <div class="section-header">
+            <span class="section-label">سرمایه‌گذاری</span>
             <h2 class="section-title">قیمت و شرایط پرداخت</h2>
         </div>
 
-        <div class="pricing-grid">
+        <div class="pricing-single">
             <!-- Main Package -->
             <div class="pricing-card featured">
-                <div class="pricing-badge">پیشنهاد اصلی</div>
-                <h3 class="pricing-title">سیستم هوش مصنوعی شبیه‌سازی</h3>
+                <div class="pricing-badge">پیشنهاد ویژه</div>
+                <h3 class="pricing-title">سیستم هوش مصنوعی شبیه‌سازی محصولات</h3>
                 <div class="pricing-amount">
                     <span class="price">۳۹۰,۰۰۰,۰۰۰</span>
                     <span class="currency">تومان</span>
                 </div>
-                <p class="pricing-timeline">مدت اجرا: <strong>تقریباً یک ماه</strong></p>
+                <div class="pricing-info-row">
+                    <p class="pricing-timeline">مدت اجرا: <strong>۵ هفته</strong></p>
+                    <p class="pricing-support">پشتیبانی رایگان: <strong>۴ هفته</strong></p>
+                </div>
+
+                <div class="offer-includes">
+                    <h4>سیستم هوش مصنوعی شامل:</h4>
+                    <ul>
+                        <li>شبیه‌سازی محصولات شیرآلات در فضای واقعی مشتری</li>
+                        <li>شبیه‌سازی محصولات کفپوش در فضای واقعی مشتری</li>
+                        <li>یکپارچه‌سازی با وب‌سایت فعلی یا وب‌سایت جدید شما</li>
+                        <li>پنل مدیریت اختصاصی برای مدیریت محصولات</li>
+                    </ul>
+                </div>
+
+                <div class="free-bonus">
+                    <h4>خدمات تکمیلی بدون هزینه اضافی:</h4>
+                    <ul>
+                        <li>بازطراحی کامل وب‌سایت با استانداردهای روز</li>
+                        <li>سازگاری با جستجوی هوش مصنوعی (قابل جستجو در ChatGPT و سایر موتورهای AI)</li>
+                        <li>بهینه‌سازی کامل سئو برای رتبه‌بندی بهتر در گوگل</li>
+                        <li>طراحی سیستم بلاگ خودکار برای بهبود سئو</li>
+                        <li>طراحی ریسپانسیو برای موبایل و تبلت</li>
+                        <li>چت‌بات هوشمند برای بهبود تجربه مشتری و دریافت اطلاعات تماس بازدیدکنندگان</li>
+                    </ul>
+                </div>
 
                 <div class="payment-schedule">
                     <h4>شرایط پرداخت</h4>
                     <div class="payment-step">
                         <div class="payment-number">۱</div>
                         <div class="payment-info">
-                            <span class="payment-label">پیش‌پرداخت</span>
-                            <span class="payment-amount">۱۳۰,۰۰۰,۰۰۰ تومان</span>
+                            <span class="payment-label">پیش از شروع پروژه</span>
+                            <span class="payment-amount">۱۹۵,۰۰۰,۰۰۰ تومان</span>
                         </div>
                     </div>
                     <div class="payment-step">
                         <div class="payment-number">۲</div>
                         <div class="payment-info">
-                            <span class="payment-label">پس از نمایش کانسپت و تأیید شما</span>
-                            <span class="payment-amount">۱۳۰,۰۰۰,۰۰۰ تومان</span>
-                        </div>
-                    </div>
-                    <div class="payment-step">
-                        <div class="payment-number">۳</div>
-                        <div class="payment-info">
-                            <span class="payment-label">پس از پیاده‌سازی و تأیید نهایی</span>
-                            <span class="payment-amount">۱۳۰,۰۰۰,۰۰۰ تومان</span>
+                            <span class="payment-label">پس از تحویل و تأیید نهایی</span>
+                            <span class="payment-amount">۱۹۵,۰۰۰,۰۰۰ تومان</span>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Website Redesign Package -->
-            <div class="pricing-card">
-                <div class="pricing-badge secondary">پیشنهاد ویژه</div>
-                <h3 class="pricing-title">بازطراحی کامل وب‌سایت</h3>
-                <div class="pricing-amount">
-                    <span class="price">۲۵۰,۰۰۰,۰۰۰</span>
-                    <span class="currency">تومان</span>
-                </div>
-
-                <div class="website-analysis">
-                    <h4>تحلیل ما از وب‌سایت فعلی شما</h4>
-                    <p>بر اساس بررسی‌های ما، وب‌سایت فعلی شما از نظر سرعت، سئو و جذب مخاطب نیاز به بهبود جدی دارد.</p>
-
-                    <ul class="analysis-points">
-                        <li>سرعت بارگذاری پایین</li>
-                        <li>عدم بهینه‌سازی برای موتورهای جستجو</li>
-                        <li>طراحی قدیمی و غیرجذاب</li>
-                    </ul>
-                </div>
-
-                <div class="offer-includes">
-                    <h4>این پکیج شامل:</h4>
+                <div class="weekly-meetings">
                     <ul>
-                        <li>بازطراحی کامل با استانداردهای روز</li>
-                        <li>بهینه‌سازی سئو و سرعت</li>
-                        <li>یکپارچه‌سازی کامل سیستم هوش مصنوعی</li>
-                        <li>طراحی ریسپانسیو برای موبایل</li>
-                        <li>هم‌راستا با جدیدترین فناوری‌های هوش مصنوعی</li>
-                        <li>پیاده‌سازی چت‌بات هوشمند در وب‌سایت</li>
+                        <li>جلسات هفتگی منظم برای بررسی پیشرفت پروژه و دریافت بازخورد شما</li>
+                        <li>پشتیبانی رایگان پس از تحویل، برای اطمینان از تطابق کامل با نیازهای کسب‌وکار شما</li>
                     </ul>
                 </div>
             </div>
@@ -1326,12 +1752,16 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <a href="https://zharfai.com" target="_blank" class="footer-logo">
-                <img src="ZharfAI Logo.png" alt="Zharf AI" class="footer-logo-img">
-            </a>
-            <p class="footer-text">ارائه شده توسط ژرف‌ای‌آی © ۱۴۰۴</p>
+            <div class="footer-contact">
+                <span>تماس با ما: </span>
+                <a href="tel:09123173144">۰۹۱۲۳۱۷۳۱۴۴</a>
+            </div>
+            <p class="footer-text">ارائه شده توسط شرکت هوش مصنوعی ژرف © ۱۴۰۴</p>
             <div class="footer-links">
-                <a href="https://zharfai.com" target="_blank">zharfai.com</a>
+                <a href="https://zharfai.com" target="_blank" class="footer-logo-link">
+                    <span>zharfai.com</span>
+                    <img src="ZharfAI Logo.png" alt="Zharf AI" class="footer-logo-img">
+                </a>
             </div>
         </div>
     </footer>
@@ -1339,8 +1769,27 @@
     <script>
         // Navigation scroll effect
         const nav = document.querySelector('.nav');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('section[id]');
+
         window.addEventListener('scroll', () => {
             nav.classList.toggle('scrolled', window.scrollY > 50);
+
+            // Active section highlighting
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
         });
 
         // Intersection Observer for animations
